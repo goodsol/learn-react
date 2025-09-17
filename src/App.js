@@ -1,27 +1,21 @@
-import Greeting from './components/Greeting';
-import Card from './components/Card';
-import Counter from './components/Counter';
-import Logical from './components/Logical';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
 
 function App() {
   // logic
-  const alertIncrease = () => {
-    console.log("💥더하기 버튼 클릭!!")
-  }
+  // 3개 페이지: Home, About, Contact
+
   // view
   return (
-    <div className="App">
-      조은솔
-      <Logical />
-      <Greeting username="조은솔" />
-      <Greeting username="남수민" />
-      <Greeting username={"김보라"} />
-      <Greeting username={"박인영"} />
-      <Greeting username={"전예린"} />
-      <Card />
-      <Counter onIncreaseClick={alertIncrease}/> {/* 함수를 이용하여 자식 → 부모 */}
-      <Counter step={5} onIncreaseClick={alertIncrease} /> {/* Props(값을 부모 → 자식) */}
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
