@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom'
 
 const Move = () => {
   // logic
-  const history = useNavigate() // react-router-dom v6 제공 함수
+  const history = useNavigate() // react-router-dom v6 제공하는 페이지 이동 함수
   // Home으로 이동
   const handleHome = () => {
     // React-router-dom으로 페이지 이동하는 방법2
